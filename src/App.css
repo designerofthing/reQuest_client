@@ -65,7 +65,11 @@ span {
 }
 
 #hsecond {
+<<<<<<< HEAD
+  color: #f2be00;
+=======
   color: #e8b704
+>>>>>>> 954964cfda9495050e19c74e4f78ba029b1baf81
 }
 
 #yellow_divider {
@@ -283,7 +287,7 @@ textarea {
   cursor: pointer;
 }
 
-#pending-link:hover, 
+#pending-link:hover,
 #active-link:hover,
 #completed-link:hover {
   color: #e6e6e6;
@@ -312,7 +316,7 @@ textarea {
 }
 
 #quest-completed {
-  position: absolute;
+  position: relative;
   color: white;
   background-color: #88a65e;
   font-weight: 700;

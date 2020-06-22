@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { List, Button, Card, Popup } from "semantic-ui-react";
-import axios from 'axios';
+import axios from "axios";
+import { useSelector } from "react-redux";
 
 const OfferMessage = (props) => {
   const [completedMessage, setCompletedMessage] = useState("");
+  const mySelectedRequest = useSelector(
+    (state) => state.requests.mySelectedRequest
+  );
 
   const helperMessage = (
     <Card.Content>
@@ -46,22 +50,19 @@ const OfferMessage = (props) => {
     </Card.Content>
   );
 
-      const completeRequest = async () => {
-      try {
-        const headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"));
-        const response = await axios.put(
-          `/my_requests/requests/${props.request.id}`,
-          { headers: headers },
-          { params: { activity: "completed" } }
-        );
-        debugger
-        setCompletedMessage(response.data.message);
-      } catch (error) {
-        debugger
-        setCompletedMessage(error.response.data.message);
-      }
-    };
-
+  const completeRequest = async () => {
+    try {
+      const headers = JSON.parse(localStorage.getItem("J-tockAuth-Storage"));
+      const response = await axios.put(
+        `/my_request/requests/${mySelectedRequest.id}`,
+        { headers: headers },
+        { params: { activity: "completed" } }
+      );
+      setCompletedMessage(response.data.message);
+    } catch (error) {
+      setCompletedMessage(error.response.data.message);
+    }
+  };
 
   return (
     <>
@@ -72,11 +73,16 @@ const OfferMessage = (props) => {
             {props.helperOffer.status === "pending" && showActivityButton}
           </Card>
         </Card.Group>
+        <div>
+          <Button id="quest-completed" onClick={completeRequest}>
+            Quest Completed
+          </Button>
+          <br />
+          <p style={{ color: "black" }} id="completed-message">
+            {completedMessage}
+          </p>
+        </div>
       </List>
-      <div id="rightmost-component">
-        <Button id="quest-completed" onClick={completeRequest}>Quest Completed</Button>
-        <p id="completed-message">{completedMessage}</p>
-      </div>
     </>
   );
 };

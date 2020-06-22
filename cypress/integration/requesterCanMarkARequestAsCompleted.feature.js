@@ -11,7 +11,7 @@ describe("Requested can mark a request as completed", () => {
     });
     cy.route({
       method: "PUT",
-      url: "**/my_request/requests/5",
+      url: "**/my_request/requests/*",
       response: { message: "Request completed" },
       headers: {
         uid: "me@mail.com",
@@ -28,7 +28,8 @@ describe("Requested can mark a request as completed", () => {
       cy.route({
         method: "GET",
         url: "**/my_request/requests/*",
-        response: "fixture:requests/active_specific_request_with_offer.json",
+        response:
+          "fixture:requests/another_active_specific_request_with_offer.json",
         headers: {
           uid: "me@mail.com",
         },
@@ -38,13 +39,11 @@ describe("Requested can mark a request as completed", () => {
       cy.get("#active-link").click();
       cy.get("#my-list").should("contain", "Fix the fixtures in the app");
       cy.get("#request-5").click();
-      cy.get(".helper-email-36").click();
       cy.get("#quest-completed").should("exist");
     });
     it("can complete request", () => {
       cy.get("#active-link").click();
       cy.get("#request-5").click();
-      cy.get(".helper-email-36").click();
       cy.get("#quest-completed").click();
       cy.get("#completed-message").should("contain", "Request completed");
     });

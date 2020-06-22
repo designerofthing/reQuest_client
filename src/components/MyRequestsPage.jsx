@@ -13,22 +13,6 @@ const MyRequestsPage = () => {
   const authenticated = useSelector(
     (state) => state.authentication.authenticated
   );
-  // const dispatch = useDispatch();
-
-  // const getMyActiveRequest = async () => {
-  //   let requests = await getMyRequests();
-  //   let activeRequest = requests.filter((request) => {
-  //     return request.status === "active";
-  //   });
-  //   let activeRequestElement = activeRequest[0];
-  //   dispatch({
-  //     type: "SET_MY_SELECTED_ACTIVE_REQUEST",
-  //     payload: {
-  //       request: activeRequestElement,
-  //     },
-  //   });
-  // };
-
 
   const showMyRequests = (status) => {
     setSelectedStatus(status);

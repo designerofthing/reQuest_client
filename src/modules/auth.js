@@ -4,7 +4,7 @@ let jtockURL;
 if (process.env.NODE_ENV === "production") {
   jtockURL = process.env.REACT_APP_HEROKUURL;
 } else if (process.env.NODE_ENV === "development") {
-  jtockURL = "http://localhost:3000/api";
+  jtockURL = process.env.REACT_APP_LOCALURL;
 }
 
 const auth = new JtockAuth({

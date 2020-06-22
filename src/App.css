@@ -65,7 +65,7 @@ span {
 }
 
 #hsecond {
-  color: #e8b704;
+  color: #e8b704
 }
 
 #yellow_divider {
@@ -254,6 +254,20 @@ textarea {
 }
 
 /* MYREQUEST PAGES */
+#menu-container {
+  display: flex;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+}
+
+#vertical-line {
+  height: 100%;
+  width: 5px;
+  background-color: #88a65e;
+}
 
 #pending-link,
 #active-link,
@@ -261,21 +275,18 @@ textarea {
   font-family: "Lora", serif;
   font-size: larger;
   text-align: center;
-  color: white;
-  width: 120px;
-  background-color: #88a65e;
+  color: #88a65e;
+  margin: 0 -4px;
+  width: 170px;
+  padding: 10px 20px 10px 50px;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-#pending-link:hover,
+#pending-link:hover, 
 #active-link:hover,
 #completed-link:hover {
   color: #e6e6e6;
-}
-
-#pending-link:active,
-#active-link:active,
-#completed-link:active {
-  background-color: #e8b704 !important;
 }
 
 #leftmost-component {

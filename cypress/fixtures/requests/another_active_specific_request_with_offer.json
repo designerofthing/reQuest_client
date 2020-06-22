@@ -1,0 +1,28 @@
+{
+  "request": {
+    "id": 6,
+    "title": "Copy fixtures and then copy them again",
+    "description": "I neeeeeeeeeeeeed help fixing the fixtures!",
+    "reward": 250,
+    "status": "active",
+    "offers": [{
+      "id": 36,
+      "email": "offerer@mail.com",
+      "message": "I can copy the fixtures, I'm fast",
+      "status": "accepted"
+    },
+    {
+      "id": 2,
+      "email": "anotherhelper@mail.com",
+      "message": "I too can give you help with this",
+      "status": "declined"
+    },
+    {
+      "id": 3,
+      "email": "yetanotherhelper@mail.com",
+      "message": "Even I can help you out with this",
+      "status": "pending"
+    }
+    ]
+  }
+} 

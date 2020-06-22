@@ -8,14 +8,18 @@ import { BrowserRouter } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import axios from "axios";
 
+if (process.env.NODE_ENV === "production") {
+  axios.defaults.baseURL = process.env.REACT_APP_HEROKUURL;
+} else if (process.env.NODE_ENV === "development") {
+  axios.defaults.baseURL = process.env.REACT_APP_LOCALURL;
+}
 const store = configureStore();
-axios.defaults.baseURL = "http://localhost:3000/api";
 
 ReactDOM.render(
   <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );

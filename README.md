@@ -1,5 +1,12 @@
 # reQuest_client
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7502e25d-7b5d-4036-9228-b6e5ec87edbc/deploy-status)](https://app.netlify.com/sites/requestnow/deploys)
+
+https://requestnow.netlify.app/
+
 Final project of April 2020 Cohort
+
+![Img](https://i.imgur.com/Z9LBbne.png)
 
 An app for people helping each other, paying with in-app currency (karma points). So in order to have people help you with stuff, you need to help others with stuff.
 
@@ -12,6 +19,7 @@ As a community of people in the local area
 In order to help each other within the area, making use of the skills and tools that exist in the area
 People can register for an account to connect *people in need of help* with *people who has the resources and ability to help with the specific task*.
 ```
+
 
 ## Features
 ### MVP
